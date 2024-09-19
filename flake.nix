@@ -12,8 +12,9 @@
       pname = "hello";
       version = "0.0.1";
       src = ./. ;
-      nugetDeps = ./deps.nix;
+      nugetDeps = ./deps.nix;#"/crucial/Projects/ConsoleApp/deps.nix";
       dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+      dotnet-runtime = pkgs.dotnetCorePackages.runtime_8_0;
 
       projectFile = "ConsoleApp.csproj";
       executables = [ "ConsoleApp" ];
@@ -24,7 +25,7 @@
         license = licenses.mit;
         platforms = [ "x86_64-linux" ];
         maintainers = with maintainers; [ gbtb ];
-      };
+        };
       };
 
     packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
